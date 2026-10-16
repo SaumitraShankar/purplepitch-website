@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://purplepitch.in/sitemap.xml

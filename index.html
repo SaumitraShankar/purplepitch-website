@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--ARTIFACT-START-->
+<title>Purple Pitch · Kahaniyon ka Prime Time</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Purple Pitch is a sports and entertainment content company. Original IP, live and non-live sport, live experiences and talent-led stories, from the team behind the TATA IPL's editorial, Star Sports' Hindi feed and Bigg Boss.">
+<meta name="theme-color" content="#3A1272">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://purplepitch.in/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Purple Pitch">
+<meta property="og:title" content="Purple Pitch · Kahaniyon ka Prime Time">
+<meta property="og:description" content="Original IP, live and non-live sport, live experiences and talent-led stories. Every story deserves prime time.">
+<meta property="og:url" content="https://purplepitch.in/">
+<meta property="og:image" content="https://purplepitch.in/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Purple Pitch","url":"https://purplepitch.in/","logo":"https://purplepitch.in/logo-on-light.svg","slogan":"Kahaniyon ka Prime Time","email":"saumitrashankar@purplepitch.in","founder":[{"@type":"Person","name":"Saumitra Shankar"},{"@type":"Person","name":"Ankita Hooda"},{"@type":"Person","name":"Jatin Sapru"}]}
+</script>
+<style>
+/* Layout: broadcast running order. Imperial "on-air" bands alternate with paper "studio" bands; one floodlight moment in the hero. */
+:root{
+  --imperial:#3A1272;   /* brand purple, on-air bands */
+  --ink:#2A0E4A;        /* deep band, headings on paper */
+  --paper:#F4F2F5;      /* page ground */
+  --mist:#CFCAD6;       /* P mark, secondary text on purple */
+  --graphite:#3B3742;   /* body text on paper */
+  --muted:#6A6372;      /* captions on paper */
+  --orange:#E2601F;     /* floodlight lamps, accent only */
+  --line-dark:rgba(244,242,245,.22);
+  --line-light:rgba(42,14,74,.18);
+  --display:"Archivo Black","Arial Black",Archivo,system-ui,sans-serif;
+  --body:Archivo,"Helvetica Neue",Arial,system-ui,sans-serif;
+  --max:1240px;
+  --gutter:clamp(20px,5vw,72px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--body);font-size:16px;color:var(--graphite);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:-.035em;text-wrap:balance}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--orange);color:var(--ink);padding:10px 14px;font-weight:700}
+.skip:focus{left:16px}
+
+.wrap{max-width:calc(var(--max) + 2*var(--gutter));margin-inline:auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.band-dark{background:var(--imperial);color:var(--paper)}
+.band-ink{background:var(--ink);color:var(--paper)}
+.section{padding-block:clamp(72px,10vw,136px)}
+
+.eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:700}
+.lamps{display:inline-grid;grid-template-columns:repeat(2,6px);gap:3px}
+.lamps i{width:6px;height:6px;border-radius:50%;background:var(--orange)}
+
+/* Logo (symbol colours inherit through custom properties) */
+.logo{display:block;height:auto}
+.on-dark{--lm:var(--mist);--lw:var(--paper);--ll:var(--orange)}
+.on-light{--lm:var(--imperial);--lw:var(--ink);--ll:var(--orange)}
+
+/* Header */
+.site-header{position:absolute;inset:0 0 auto;z-index:20;color:var(--paper)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:26px;border-bottom:1px solid var(--line-dark)}
+.brand .logo{width:200px}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:600}
+.nav-links a{opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-cta{padding:11px 16px;border:1px solid rgba(244,242,245,.55);border-radius:2px;opacity:1!important}
+.nav-cta:hover{background:var(--paper);color:var(--imperial)}
+.menu-toggle{display:none;color:var(--paper);background:none;border:1px solid rgba(244,242,245,.4);padding:9px 12px;font:inherit;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding-block:clamp(150px,16vw,190px) 56px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:48px;align-items:end;position:relative;z-index:1}
+.hero h1{font-size:clamp(52px,9.2vw,132px);line-height:.9;margin:28px 0 30px;max-width:12.5ch}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero-intro{font-size:18px;line-height:1.6;max-width:34em;color:var(--mist)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:var(--ink);padding:16px 22px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;border:0;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.text-link{display:inline-flex;gap:12px;align-items:center;padding-bottom:6px;border-bottom:1px solid currentColor;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em}
+.hero-stat{border-left:1px solid var(--line-dark);padding:4px 0 4px 22px;max-width:300px;justify-self:end}
+.hero-stat .figure{font-family:var(--display);font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.05em}
+.hero-stat p{margin-top:12px;font-size:13px;line-height:1.55;color:var(--mist)}
+.hero-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin-top:84px;padding-top:20px;border-top:1px solid var(--line-dark);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--mist);position:relative;z-index:1}
+.hero-foot strong{color:var(--paper);font-weight:700}
+
+/* Floodlight: the lamp bank switches on, one lamp per I */
+.floodlight{position:absolute;top:118px;right:calc(max(var(--gutter),env(safe-area-inset-right,0px)) - 10px);width:min(34vw,420px);aspect-ratio:1;pointer-events:none}
+.floodlight .beam{position:absolute;inset:-30% -60% -120% -40%;background:radial-gradient(closest-side at 62% 32%,rgba(255,214,170,.20),rgba(226,96,31,.07) 45%,transparent 72%)}
+.floodlight .bank{position:absolute;top:8%;right:8%;display:grid;grid-template-columns:repeat(2,1fr);gap:18%;width:44%}
+.floodlight .bank i{display:block;aspect-ratio:1;border-radius:50%;background:var(--orange);box-shadow:0 0 0 6px rgba(226,96,31,.14),0 0 46px 10px rgba(255,150,80,.38);animation:lampOn .5s ease-out both}
+.floodlight .bank i:nth-child(1){animation-delay:.25s}
+.floodlight .bank i:nth-child(2){animation-delay:.55s}
+.floodlight .bank i:nth-child(3){animation-delay:.85s}
+.floodlight .bank i:nth-child(4){animation-delay:1.15s}
+.floodlight .beam{animation:beamOn 1.2s ease-out 1.1s both}
+@keyframes lampOn{from{background:#5b2a8f;box-shadow:none}to{}}
+@keyframes beamOn{from{opacity:.25}to{opacity:1}}
+
+/* Section heads */
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:24px 48px;align-items:end;margin-bottom:56px}
+.section-head h2{font-size:clamp(38px,5.4vw,70px);line-height:.95;margin-top:16px;color:var(--ink)}
+.band-dark .section-head h2,.band-ink .section-head h2{color:var(--paper)}
+.section-head p{font-size:15px;line-height:1.6}
+.band-dark .section-head p,.band-ink .section-head p{color:var(--mist)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,8vw,110px);align-items:start}
+.statement{font-family:var(--display);text-transform:uppercase;font-size:clamp(28px,3.6vw,46px);line-height:1.02;letter-spacing:-.04em;color:var(--ink);text-wrap:balance}
+.about-copy{display:grid;gap:18px;font-size:17px;line-height:1.75;max-width:34em}
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:72px;background:var(--line-light);border:1px solid var(--line-light)}
+.principle{background:var(--paper);padding:30px 28px 32px;display:grid;gap:10px;align-content:start}
+.principle .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--imperial)}
+.principle h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:20px;letter-spacing:-.02em;color:var(--ink);margin-top:14px}
+.principle p{font-size:14px;line-height:1.65}
+
+/* Services */
+.services-list{border-top:1px solid var(--line-dark)}
+.service{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:12px 48px;align-items:baseline;padding-block:28px;border-bottom:1px solid var(--line-dark)}
+.service h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(24px,3vw,38px);line-height:1;letter-spacing:-.035em;display:flex;align-items:center;gap:16px}
+.service h3::before{content:"";flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px 2px rgba(226,96,31,.55);transform:translateY(-2px)}
+.service p{color:var(--mist);font-size:15px;line-height:1.6;max-width:32em}
+
+/* Work */
+.work-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);grid-template-rows:auto auto;gap:18px}
+.case{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:clamp(24px,3vw,36px);min-height:300px;isolation:isolate}
+.case-1{grid-row:span 2;min-height:560px;background:var(--imperial);color:var(--paper)}
+.case-2{background:var(--ink);color:var(--paper)}
+.case-3{background:#DDD7E4;color:var(--ink)}
+.case .kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.case h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(30px,4vw,56px);line-height:.92;letter-spacing:-.045em}
+.case-2 h3,.case-3 h3{font-size:clamp(26px,2.8vw,38px)}
+.case p{font-size:15px;line-height:1.6;max-width:30em}
+.case-1 p,.case-2 p{color:var(--mist)}
+.case .meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;margin-top:10px;padding-top:14px;border-top:1px solid currentColor;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.case-3 .meta{border-color:rgba(42,14,74,.35)}
+.case .art{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.case-1 .art{background:
+  radial-gradient(circle at 78% 22%,rgba(226,96,31,.0) 0 22%,transparent 22.2%),
+  repeating-radial-gradient(circle at 80% 20%,rgba(244,242,245,.10) 0 1px,transparent 1px 46px)}
+.case-1 .art::after{content:"";position:absolute;right:12%;top:12%;width:26%;aspect-ratio:1;border-radius:50%;border:14px solid var(--orange);opacity:.9}
+.case-2 .art{background:linear-gradient(115deg,transparent 0 58%,rgba(244,242,245,.06) 58% 70%,transparent 70%)}
+.case-3 .art{background:repeating-linear-gradient(90deg,rgba(58,18,114,.07) 0 1px,transparent 1px 28px)}
+.badge{align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 9px;border:1px solid currentColor;border-radius:2px}
+
+/* Track record */
+.record-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+.record{background:var(--ink);padding:30px 28px 32px;display:grid;gap:12px;align-content:start}
+.record .figure{text-transform:uppercase;font-family:var(--display);font-size:clamp(40px,4.6vw,64px);line-height:1;letter-spacing:-.05em;color:var(--paper);font-variant-numeric:tabular-nums}
+.record .figure small{font-size:.45em;letter-spacing:-.02em}
+.record p{font-size:14px;line-height:1.6;color:var(--mist)}
+.record .who{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.fine{font-size:12px;color:var(--mist);margin-top:20px}
+
+/* Method */
+.method{background:var(--mist)}
+.method-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,8vw,110px)}
+.method h2{font-size:clamp(42px,5.4vw,72px);line-height:.93;margin:16px 0 22px;color:var(--ink)}
+.method-lead{font-size:16px;line-height:1.65;max-width:26em}
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid rgba(42,14,74,.3)}
+.step{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding-block:22px;border-bottom:1px solid rgba(42,14,74,.3)}
+.step .n{font-family:var(--display);font-size:22px;line-height:1.1;color:var(--imperial)}
+.step h3{font-size:16px;text-transform:uppercase;letter-spacing:.03em;color:var(--ink);margin-bottom:4px}
+.step p{font-size:15px;line-height:1.6}
+
+/* People */
+.founders{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.founder{border-top:3px solid var(--imperial);padding-top:24px;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:6px}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--imperial);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:28px;letter-spacing:-.06em;margin-bottom:14px;position:relative;overflow:hidden}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.founder h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:22px;letter-spacing:-.03em;color:var(--ink)}
+.founder .role{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.founder p{font-size:14px;line-height:1.7;margin-top:10px}
+.founder .mail{margin-top:16px;font-size:13px;font-weight:600;color:var(--imperial);overflow-wrap:anywhere}
+.founder .mail:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Contact */
+.cta-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:36px 56px;align-items:start;margin-top:6px}
+.cta h2{font-size:clamp(46px,8vw,108px);line-height:.9;margin:18px 0 22px;max-width:14ch}
+.cta-lead{color:var(--mist);font-size:17px;line-height:1.6;max-width:30em}
+.contact-box{display:grid;gap:18px;justify-items:start}
+.emails{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px}
+.emails li{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.emails .nm{color:var(--mist);min-width:9.5em}
+.emails a{color:var(--paper);text-decoration:underline;text-decoration-color:rgba(207,202,214,.45);text-underline-offset:3px;overflow-wrap:anywhere}
+.copy{background:none;border:1px solid rgba(244,242,245,.35);color:var(--mist);font:inherit;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;cursor:pointer}
+.copy:hover{color:var(--paper);border-color:var(--paper)}
+
+/* Footer */
+footer{background:var(--ink);color:var(--mist);padding-block:36px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 28px}
+footer .logo{width:150px}
+footer .line{color:var(--paper);font-weight:700}
+
+@media (max-width:980px){
+  .floodlight{width:44vw;top:110px;opacity:.75}
+  .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .founders{grid-template-columns:minmax(0,1fr)}
+  .founder{grid-template-columns:84px minmax(0,1fr);grid-template-rows:none;column-gap:22px;row-gap:4px}
+  .founder .avatar{grid-row:1 / span 5;margin:0}
+}
+@media (max-width:760px){
+  .nav{padding-block:18px}
+  .brand .logo{width:160px}
+  .menu-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;padding:22px max(var(--gutter),env(safe-area-inset-left,0px)) 28px;background:var(--ink);flex-direction:column;align-items:flex-start;gap:20px;font-size:15px}
+  .nav-links.open{display:flex}
+  .site-header .wrap{position:relative}
+  .hero{padding-block:132px 36px}
+  .hero-grid,.about-grid,.method-grid,.cta-grid,.section-head,.service,.work-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-stat{justify-self:start}
+  .floodlight{width:70vw;top:40px;right:-20vw;opacity:.8}
+  .floodlight .bank{display:none}
+  .hero-foot{margin-top:56px;flex-direction:column}
+  .principles{grid-template-columns:minmax(0,1fr);margin-top:48px}
+  .case-1{grid-row:auto;min-height:440px}
+  .record-grid{grid-template-columns:minmax(0,1fr)}
+  .founder{grid-template-columns:64px minmax(0,1fr)}
+  .avatar{width:64px;height:64px;font-size:22px}
+  .emails .nm{min-width:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+<!--HEAD-END-->
+</head>
+<body>
+<!--BODY-START-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="pp-logo" viewBox="0 0 1196 228"><path style="fill:var(--lm)" fill-rule="evenodd" d="M111.75,7.00 102.00,5.00 98.00,4.75 3.50,4.50 2.50,5.00 2.50,224.75 3.50,225.25 50.50,225.00 50.75,134.25 51.50,133.50 98.75,133.50 106.25,132.50 116.75,129.50 125.00,125.75 130.25,122.50 138.50,115.75 143.75,110.25 146.75,106.25 152.75,95.75 155.75,88.00 155.75,86.75 156.75,84.00 157.75,78.75 158.50,70.00 158.00,61.75 156.75,54.25 155.50,49.50 152.75,42.50 149.75,36.75 144.50,29.00 135.75,20.00 129.25,15.00 124.25,12.00 123.50,12.00 118.25,9.25ZM110.75,77.75 116.25,77.00 120.00,77.75 122.50,79.00 126.50,82.75 128.75,87.50 129.00,92.50 128.00,96.00 126.75,98.25 123.00,102.00 118.50,104.00 112.50,104.00 108.00,102.00 104.00,98.00 102.00,93.25 102.00,88.00 103.75,83.50 107.25,79.75ZM75.25,77.25 80.25,77.25 84.75,79.00 89.00,83.00 91.00,87.25 91.00,94.00 89.00,98.25 85.25,102.00 80.75,104.00 74.75,104.00 71.50,102.75 67.25,99.25 64.75,95.00 64.25,88.75 66.00,83.75 69.25,80.00 72.50,78.00ZM113.75,34.00 117.25,34.00 120.25,34.75 123.00,36.25 126.75,40.00 128.00,42.25 129.00,45.50 128.75,50.75 127.00,54.75 123.50,58.50 118.25,61.00 112.75,61.00 108.50,59.25 104.00,55.00 102.00,50.25 102.00,45.00 103.75,40.50 108.50,35.75 110.50,34.75ZM75.75,34.00 79.50,34.00 82.50,34.75 86.00,36.75 89.00,40.00 91.00,44.25 91.00,51.00 89.00,55.25 85.25,59.00 80.50,61.00 75.00,61.00 70.00,58.75 66.00,54.50 64.75,52.00 64.25,49.25 64.75,43.25 66.75,39.50 70.50,36.00Z"/><g style="fill:var(--ll)"><circle cx="115.41" cy="90.64" r="13.5"/><circle cx="77.72" cy="90.63" r="13.5"/><circle cx="115.42" cy="47.56" r="13.5"/><circle cx="77.72" cy="47.58" r="13.5"/></g><path style="fill:var(--lw)" fill-rule="evenodd" d="M1098.25,37.25 1098.50,101.25 1113.75,101.50 1114.50,101.00 1114.50,76.50 1115.50,75.25 1155.50,75.25 1156.50,76.00 1156.50,100.75 1157.25,101.50 1172.25,101.50 1172.75,101.00 1172.50,36.75 1157.00,36.75 1156.50,37.25 1156.50,61.00 1155.25,61.75 1115.50,61.75 1114.75,61.25 1114.50,60.25 1114.50,37.00 1098.75,36.75ZM910.50,36.75 910.00,37.25 910.00,50.00 910.50,50.50 937.75,50.50 938.50,51.25 938.50,100.75 939.25,101.50 954.25,101.50 954.75,101.00 954.75,51.25 955.25,50.50 982.50,50.50 983.25,49.50 983.00,37.00ZM875.50,36.75 875.00,37.25 875.00,100.50 875.75,101.50 890.50,101.50 891.50,100.50 891.50,37.50 890.75,36.75ZM787.00,101.25 802.75,101.25 803.00,80.25 803.50,79.75 838.75,79.75 845.25,77.75 849.25,75.00 852.75,71.00 854.75,67.25 855.75,64.25 856.25,60.00 855.75,52.25 853.75,47.00 851.50,43.75 849.00,41.25 845.75,39.00 840.25,37.00 787.25,36.75 786.75,37.50ZM803.00,50.25 803.75,49.50 831.00,49.50 834.75,50.00 836.75,51.00 839.75,54.50 840.25,57.25 840.00,61.25 839.00,63.25 836.75,65.50 832.50,67.00 803.50,67.00 803.00,66.50ZM660.75,37.25 660.75,100.75 661.25,101.50 727.25,101.50 727.75,101.00 727.75,89.00 727.25,88.50 677.50,88.50 677.00,88.00 677.00,75.25 677.75,74.75 720.75,74.75 721.25,74.25 721.25,63.00 720.75,62.25 677.75,62.25 677.00,61.50 677.00,50.25 677.75,49.50 726.25,49.75 727.00,49.00 727.00,37.25 726.50,36.75 661.25,36.75ZM585.00,36.75 584.50,37.25 584.50,101.00 585.25,101.50 641.50,101.50 642.00,100.50 642.00,88.50 641.50,87.75 601.25,87.75 600.75,87.25 600.75,37.25 600.25,36.75ZM496.00,100.75 496.75,101.50 511.50,101.50 512.25,101.00 512.25,80.50 513.25,79.75 548.00,79.75 554.50,77.75 558.75,74.75 561.50,71.75 563.75,68.00 565.50,61.25 565.50,55.00 564.75,51.25 562.75,46.50 561.00,44.00 556.25,39.75 553.00,38.00 549.50,37.00 496.50,36.75 496.00,37.25ZM512.25,50.50 513.50,49.50 540.25,49.50 544.00,50.00 547.25,52.00 549.00,54.50 549.50,56.50 549.50,60.00 549.00,62.00 547.50,64.25 546.00,65.50 542.00,67.00 513.25,67.00 512.25,66.25ZM401.50,37.00 401.75,101.25 417.50,101.25 417.75,79.25 418.50,78.75 445.25,78.75 446.75,80.25 452.00,91.25 453.00,92.50 453.00,93.25 457.50,101.25 475.25,101.25 473.75,97.50 462.25,76.50 462.75,75.75 466.25,73.75 470.00,70.00 472.75,65.25 473.75,62.00 474.00,54.50 472.75,48.75 470.75,44.75 467.00,40.75 462.50,38.00 456.50,36.75ZM417.75,50.25 418.50,49.50 452.00,49.75 454.25,50.75 456.75,53.50 457.50,56.75 457.00,61.00 456.00,62.75 454.00,64.75 451.50,66.00 418.50,66.25 417.75,65.50ZM303.75,37.00 303.50,71.50 304.00,78.50 306.00,85.25 308.00,89.00 311.00,92.75 314.00,95.50 321.75,99.75 328.75,101.75 335.50,102.50 345.25,102.50 351.75,101.75 359.00,99.75 366.25,95.75 370.00,92.25 372.75,88.50 374.75,84.50 376.75,77.00 377.00,37.50 376.50,36.75 361.25,36.75 360.75,37.25 360.75,73.00 359.75,78.00 357.75,82.00 354.25,85.75 351.00,87.75 348.25,88.75 342.50,89.75 336.25,89.50 329.50,87.75 326.25,85.75 323.50,83.00 320.75,78.00 319.75,73.00 319.75,37.00ZM215.75,101.00 216.25,101.50 231.75,101.25 231.75,80.50 232.50,79.75 267.50,79.75 272.25,78.50 277.25,75.75 281.75,70.75 283.75,67.00 284.75,63.50 284.75,52.75 282.75,47.25 280.75,44.25 276.25,40.00 272.50,38.00 269.25,37.00 216.25,36.75 215.75,37.25ZM231.75,50.50 232.50,49.50 262.75,49.75 265.25,50.75 268.00,53.50 269.00,55.75 269.00,60.75 267.75,63.50 264.75,66.00 261.50,67.00 232.50,67.00 231.75,66.25ZM1012.25,42.00 1009.50,44.00 1005.75,47.75 1003.00,51.75 1000.25,58.50 999.00,65.50 999.25,74.75 1000.00,79.25 1001.25,83.00 1004.25,88.75 1009.00,94.00 1014.50,97.75 1022.50,100.75 1033.75,102.50 1044.00,102.50 1055.00,100.75 1060.50,98.75 1066.00,95.75 1071.00,91.25 1073.50,87.75 1075.75,82.25 1076.25,76.75 1075.75,76.25 1061.25,76.25 1059.75,81.50 1057.00,84.75 1054.25,86.75 1047.75,89.00 1042.25,89.75 1036.00,89.75 1031.00,89.00 1027.75,88.00 1022.50,85.00 1018.00,80.00 1016.75,77.25 1015.75,73.00 1015.75,64.75 1017.00,60.00 1019.00,56.50 1021.25,54.00 1025.25,51.25 1032.50,48.75 1045.50,48.75 1053.00,51.00 1056.00,53.00 1058.75,56.00 1060.00,58.50 1060.25,61.25 1061.00,62.00 1075.75,62.00 1076.25,61.50 1076.25,60.00 1074.75,53.00 1072.50,49.00 1069.00,45.00 1065.25,42.00 1059.50,39.00 1053.25,37.00 1045.00,35.75 1033.00,35.75 1024.25,37.00 1018.00,39.00Z"/></symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand on-dark" href="#top" aria-label="Purple Pitch home">
+        <svg class="logo" viewBox="0 0 1196 228" role="img" aria-label="Purple Pitch"><use href="#pp-logo"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#services">What we do</a>
+        <a href="#work">Work</a>
+        <a href="#record">Track record</a>
+        <a href="#people">People</a>
+        <a class="nav-cta" href="#contact">Start a conversation</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero band-dark" id="top">
+    <div class="floodlight" aria-hidden="true"><div class="beam"></div><div class="bank"><i></i><i></i><i></i><i></i></div></div>
+    <div class="wrap">
+      <div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Sport · Entertainment · Original IP</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Every story deserves <em>prime time.</em></h1>
+          <p class="hero-intro">Purple Pitch is a content company for sport and entertainment. We create original IP, produce live and non-live sport, stage live experiences and build talent-led stories for every screen an audience lives on.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#work">See the work <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+        <aside class="hero-stat" aria-label="Track record">
+          <div class="figure">1.2B+</div>
+          <p>Viewers for the TATA IPL 2026 season on JioStar, which our co-founder Saumitra Shankar led editorially.</p>
+        </aside>
+      </div>
+      <div class="hero-foot"><strong>Kahaniyon ka Prime Time</strong><span>Live &amp; non-live sports &amp; entertainment</span><span>Built in India, made to travel</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Who we are</div><h2>A house of ideas with a feel for the moment.</h2></div>
+        <p>Sport, entertainment and brands now compete for the same hour of attention. We find the story that wins it.</p>
+      </div>
+      <div class="about-grid">
+        <p class="statement">We make the kind of work people choose to watch.</p>
+        <div class="about-copy">
+          <p>Purple Pitch was founded by people who have spent their careers in live control rooms and on reality-show floors. We bring strategy, creative craft and talent relationships together to build stories that work across broadcast, digital and live.</p>
+          <p>Every idea we take on needs a reason to exist, an audience it can move and a life beyond launch day.</p>
+        </div>
+      </div>
+      <div class="principles">
+        <article class="principle"><span class="tag">Story first</span><h3>Start with a story</h3><p>Every format begins with a narrative worth watching. The slot comes second.</p></article>
+        <article class="principle"><span class="tag">Talent powered</span><h3>Built around people</h3><p>Long relationships with the athletes, broadcasters and personalities audiences already trust.</p></article>
+        <article class="principle"><span class="tag">Platform native</span><h3>Made for the medium</h3><p>Shaped for how each platform's audience actually watches, shares and comes back.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-ink" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>What we do</div><h2>From first thought to prime time.</h2></div>
+        <p>Six disciplines under one roof, so an idea can move from a whiteboard to a live feed without changing hands.</p>
+      </div>
+      <div class="services-list">
+        <div class="service"><h3>Live sport production</h3><p>Broadcast production for leagues, tournaments and events: editorial, direction, presentation and the full live feed.</p></div>
+        <div class="service"><h3>Non-live sports stories</h3><p>Documentaries, interview series and shoulder programming that put the athlete at the centre of the frame.</p></div>
+        <div class="service"><h3>Original IP</h3><p>Shows, formats, leagues and live properties we create from a blank page and build to outlast a single season.</p></div>
+        <div class="service"><h3>Live experiences</h3><p>Cultural livestreams, felicitation nights and fan events, staged for the people in the room and the millions on the stream.</p></div>
+        <div class="service"><h3>Talent-led content</h3><p>YouTube and social shows built with athletes, broadcasters and personalities who already have an audience.</p></div>
+        <div class="service"><h3>Brand &amp; content strategy</h3><p>Content strategy for brands, leagues, broadcasters and institutions, and branded series that earn their place in the feed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Selected work</div><h2>Made for the moment.</h2></div>
+        <p>A first look at what is on our slate. More case studies will follow as projects go live.</p>
+      </div>
+      <div class="work-grid">
+        <article class="case case-1">
+          <div class="art" aria-hidden="true"></div>
+          <span class="badge">Presented by IDFC FIRST Bank</span>
+          <span class="kicker">Interview-documentary series</span>
+          <h3>Made Of Metal</h3>
+          <p>Long-form portraits of Indian athletes, told through the setbacks that shaped them and the rise that followed. Episodes feature sprinter Gurindervir Singh and fencer Tanishka Khatri.</p>
+          <div class="meta"><span>Non-live sport</span><span>Brand storytelling</span></div>
+        </article>
+        <article class="case case-2">
+          <div class="art" aria-hidden="true"></div>
+          <span class="kicker">Harbhajan Singh &amp; Geeta Basra</span>
+          <h3>Who's The Boss</h3>
+          <p>An established YouTube show, reimagined. We are conceptualising and producing the next season as a complete creative refresh.</p>
+          <div class="meta"><span>Talent-led content</span><span>Next season</span></div>
+        </article>
+        <article class="case case-3">
+          <div class="art" aria-hidden="true"></div>
+          <span class="kicker">In development</span>
+          <h3>An original IP slate</h3>
+          <p>Leagues, formats and live properties being built with partners across India. Ask us what is coming next.</p>
+          <div class="meta"><span>Original IP</span><a href="#contact">Talk to us ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-ink" id="record">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Before Purple Pitch</div><h2>We've run the biggest rooms in Indian sport.</h2></div>
+        <p>Work our founders led in earlier roles at JioStar, Star Sports and Star Plus. It is the experience every Purple Pitch project starts with.</p>
+      </div>
+      <div class="record-grid">
+        <div class="record"><div class="figure">1.2B+</div><p>Viewers for the TATA IPL 2026 season. Editorial lead for the IPL from 2020 to 2026.</p><span class="who">Saumitra Shankar · JioStar</span></div>
+        <div class="record"><div class="figure">10 <small>YEARS</small></div><p>Leading the Hindi live feed for every marquee ICC event.</p><span class="who">Saumitra Shankar · Star Sports</span></div>
+        <div class="record"><div class="figure">39M+</div><p>Views and 218M watch minutes for Mahashivratri: The Divine Night, a 15-hour multi-feed livestream with 20+ live aartis from the Jyotirlingas.</p><span class="who">Saumitra Shankar · JioHotstar</span></div>
+        <div class="record"><div class="figure">20M+</div><p>Views for RamNavami Live with Amitabh Bachchan: an 8-hour livestream from Ayodhya to Chitrakoot, Panchavati and Bhadrachalam, with the Padma Vibhushan narrating the Ram Katha through all seven kands of the Ramayana.</p><span class="who">Saumitra Shankar · JioHotstar</span></div>
+        <div class="record"><div class="figure">Bigg Boss</div><p>Creative leadership across seasons of Bigg Boss, plus Indian Idol and other reality hits.</p><span class="who">Ankita Hooda · Star Plus</span></div>
+        <div class="record"><div class="figure">On air</div><p>One of India's leading cricket broadcasters, at the centre of the game's biggest live moments.</p><span class="who">Jatin Sapru · Broadcaster</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section method" id="method">
+    <div class="wrap method-grid">
+      <div>
+        <div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>How we think</div>
+        <h2>Four I's. One bright idea.</h2>
+        <p class="method-lead">The four lamps in our logo are the four I's. An idea switches them on in order, and when all four are lit it is ready for prime time.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="n">01</span><div><h3>Intent · the why</h3><p>Set a clear objective before anything else.</p></div></li>
+        <li class="step"><span class="n">02</span><div><h3>Identify · the who</h3><p>Know the audience: their needs, their motivations and why they will care.</p></div></li>
+        <li class="step"><span class="n">03</span><div><h3>Imagine · the what</h3><p>Explore every possibility without limits, then build it for the platform and the budget.</p></div></li>
+        <li class="step"><span class="n">04</span><div><h3>Ignite · the feeling</h3><p>Create the emotion, inspiration and memories people carry away.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="people">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Who you work with</div><h2>Experience that knows the game.</h2></div>
+        <p>A founding team spanning live sport, editorial leadership, unscripted entertainment and life on air.</p>
+      </div>
+      <div class="founders">
+        <article class="founder">
+          <div class="avatar" aria-hidden="true">SS<!-- headshot: <img src="saumitra.jpg" alt=""> --></div>
+          <h3>Saumitra Shankar</h3>
+          <span class="role">Co-founder</span>
+          <p>Until recently SVP and Head of League Sports at JioStar, and editorial lead for the TATA IPL from 2020 to 2026. Before that, a decade at Star Sports leading the Hindi live feed for every marquee ICC event, and the creator of large-scale cultural livestreams for JioHotstar, including RamNavami Live with Amitabh Bachchan.</p>
+          <a class="mail" href="mailto:saumitrashankar@purplepitch.in">saumitrashankar@purplepitch.in</a>
+        </article>
+        <article class="founder">
+          <div class="avatar" aria-hidden="true">AH<!-- headshot: <img src="ankita.jpg" alt=""> --></div>
+          <h3>Ankita Hooda</h3>
+          <span class="role">Co-founder</span>
+          <p>Former Head of Non-Fiction at Star Plus and JioHotstar. Creatively led Bigg Boss across seasons and worked on Indian Idol, with a decade of reality and unscripted hits and experience in cricket programming.</p>
+          <a class="mail" href="mailto:ankitahooda@purplepitch.in">ankitahooda@purplepitch.in</a>
+        </article>
+        <article class="founder">
+          <div class="avatar" aria-hidden="true">JS<!-- headshot: <img src="jatin.jpg" alt=""> --></div>
+          <h3>Jatin Sapru</h3>
+          <span class="role">Co-founder</span>
+          <p>One of India's leading cricket broadcasters, known for the game's high-stakes live moments and a deep connection with cricket audiences, on air and on his own YouTube channel.</p>
+          <a class="mail" href="mailto:jatin@purplepitch.in">jatin@purplepitch.in</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta band-dark" id="contact">
+    <div class="wrap">
+      <div class="eyebrow"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Your next story</div>
+      <h2>Got a story worth telling?</h2>
+      <div class="cta-grid">
+      <div>
+        <p class="cta-lead">Bring us the ambition, the audience or the challenge. We'll help find the idea worth switching the lights on for.</p>
+      </div>
+      <div class="contact-box">
+        <a class="btn" href="mailto:saumitrashankar@purplepitch.in?cc=ankitahooda@purplepitch.in,jatin@purplepitch.in&amp;subject=Hello%20Purple%20Pitch">Email the founders <span aria-hidden="true">↗</span></a>
+        <ul class="emails">
+          <li><span class="nm">Saumitra Shankar</span><a href="mailto:saumitrashankar@purplepitch.in">saumitrashankar@purplepitch.in</a><button class="copy" type="button" data-copy="saumitrashankar@purplepitch.in">Copy</button></li>
+          <li><span class="nm">Ankita Hooda</span><a href="mailto:ankitahooda@purplepitch.in">ankitahooda@purplepitch.in</a><button class="copy" type="button" data-copy="ankitahooda@purplepitch.in">Copy</button></li>
+          <li><span class="nm">Jatin Sapru</span><a href="mailto:jatin@purplepitch.in">jatin@purplepitch.in</a><button class="copy" type="button" data-copy="jatin@purplepitch.in">Copy</button></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="on-dark"><svg class="logo" viewBox="0 0 1196 228" role="img" aria-label="Purple Pitch"><use href="#pp-logo"/></svg></span>
+    <span class="line">Kahaniyon ka Prime Time</span>
+    <span>© <span id="year">2026</span> Purple Pitch LLP</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.querySelector('.menu-toggle'), nav=document.getElementById('nav-links');
+  function setOpen(open){nav.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Close':'Menu';}
+  toggle.addEventListener('click',function(){setOpen(!nav.classList.contains('open'));});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+  document.getElementById('year').textContent=new Date().getFullYear();
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var text=btn.getAttribute('data-copy');
+      function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy';},1600);}
+      function fallback(){var a=btn.previousElementSibling;var r=document.createRange();r.selectNodeContents(a);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy';},1600);}
+      try{navigator.clipboard.writeText(text).then(done,fallback);}catch(e){fallback();}
+    });
+  });
+})();
+</script>
+<!--BODY-END-->
+</body>
+</html>
